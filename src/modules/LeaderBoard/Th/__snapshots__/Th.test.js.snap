@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 5 table heads 1`] = `
+Array [
+  <th>
+    a
+</th>,
+  <th>
+    b
+</th>,
+  <th>
+    c
+</th>,
+  <th>
+    d
+</th>,
+  <th>
+    e
+</th>,
+]
+`;

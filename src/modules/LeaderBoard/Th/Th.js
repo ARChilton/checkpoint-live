@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Th = ({ header }) => (
-  header.map(heading => (
+const Th = ({ headers }) => (
+  headers.map(heading => (
     <th>{heading}</th>
   ))
 )
 
 Th.propTypes = {
-  header: PropTypes.objectOf(PropTypes.string).isRequired,
+  headers: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Th

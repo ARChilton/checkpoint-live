@@ -1,18 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
 import Th from './Th/Th'
-import Td from '.Td/Td'
+import Tr from './Tr/Tr'
+import getLeaderBoardRows from './leaderboardState'
 
 const LeaderBoard = ({ rows, headers }) => (
   <div>
     <Th headers={headers} />
     {rows.map(row => (
-      <Td row={row} headers={headers} />
+      <Tr row={row} />
     ))}
   </div>
 )
+
 
 const mapStateToProps = state => ({
   rows: getLeaderBoardRows(state),
