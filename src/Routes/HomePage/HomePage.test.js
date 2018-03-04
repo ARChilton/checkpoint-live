@@ -1,15 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MemoryRouter } from 'react-router'
-import App from './App'
+import HomePage from './HomePage'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>
-    , div,
-  )
+  ReactDOM.render(<HomePage />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

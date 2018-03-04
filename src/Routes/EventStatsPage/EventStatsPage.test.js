@@ -1,15 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MemoryRouter } from 'react-router'
-import App from './App'
+import EventStatsPage from './EventStatsPage'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(
-    <MemoryRouter initialEntries={['/']}>
-      <App />
-    </MemoryRouter>
-    , div,
-  )
+  ReactDOM.render(<EventStatsPage />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { createStore, applyMiddleware, compose } from 'redux'
-// import {routerMiddleware} from 'react-router-redux'
+import {routerMiddleware} from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
 // import {fromJS} from 'immutable'
 import createReducer from './reducers'
@@ -9,7 +9,7 @@ import createReducer from './reducers'
 export default function configureStore(initialState = { adam: 'isgreat' }, history) {
   const middleware = applyMiddleware(
     // Middleware execution order is top-to-bottom
-    // routerMiddleware(history),
+    routerMiddleware(history),
     thunkMiddleware,
   )
 

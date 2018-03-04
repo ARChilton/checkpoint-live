@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Tr = ({ row }) => (
-  rows.map(input => (
+  row.map(input => (
     <td>{input}</td>
   ))
 )
