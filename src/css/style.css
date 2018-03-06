@@ -1803,6 +1803,9 @@ p {
 ons-splitter-mask {
     background-color: rgba(0, 0, 0, 0.3);
 }
+ons-splitter, ons-splitter-mask, ons-splitter-content, ons-splitter-side{
+    z-index:3;
+}
 
 .menuTopBox {
     width: 100%;
