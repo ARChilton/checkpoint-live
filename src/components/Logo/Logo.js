@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import logo from './largeLogo.svg'
+import logo from '../../img/largeLogo.svg'
 
 const Logo = ({ alt, className }) => (
   <img src={logo} alt={alt} className={className} />

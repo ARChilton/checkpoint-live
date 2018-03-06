@@ -6,7 +6,7 @@ export const toggleSideMenu = (sideMenuOpen = false) => ({
 })
 
 export const initialState = {
-  sideMenuOpen: true,
+  sideMenuOpen: false,
   menuItems: ['signOut'],
 }
 

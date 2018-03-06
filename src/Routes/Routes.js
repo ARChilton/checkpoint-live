@@ -51,10 +51,13 @@ Routes.defaultProps = {
   menuItems: [],
 }
 
-const mapStateToProps = state => ({
-  menuIsOpen: getSideMenuState(state),
-  menuItems: getSideMenuItems(state),
-})
+const mapStateToProps = (state) => {
+  console.log(getSideMenuState(state))
+  return {
+    menuIsOpen: getSideMenuState(state),
+    menuItems: getSideMenuItems(state),
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   onClose: dispatch(toggleSideMenu(false)),
