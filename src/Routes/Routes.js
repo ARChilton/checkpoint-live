@@ -1,12 +1,10 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, withRouter } from 'react-router'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Splitter, SplitterContent, SplitterSide } from 'react-onsenui'
-
 import { getSideMenuState, getSideMenuItems } from '../redux/reducers'
-
-import { toggleSideMenu } from './SplitterState'
+import { toggleSideMenu } from './splitterState'
 import MenuPage from './MenuPage/MenuPage'
 import HomePage from './HomePage/HomePage'
 import EventStatsPage from './EventStatsPage/EventStatsPage'
@@ -30,11 +28,12 @@ const Routes = ({
       </SplitterSide>
       <SplitterContent>
         {/* <MyNavigator /> */}
+        {/* <Route exact path="/" component={HomePage} /> */}
         <Route exact path="/" component={HomePage} />
+        <Route path="/event-stats" component={EventStatsPage} />
       </SplitterContent>
     </Splitter>
-    <Route exact path="/" component={HomePage} />
-    <Route path="/event-stats" component={EventStatsPage} />
+
 
   </div >
 )
@@ -51,16 +50,14 @@ Routes.defaultProps = {
   menuItems: [],
 }
 
-const mapStateToProps = (state) => {
-  console.log(getSideMenuState(state))
-  return {
-    menuIsOpen: getSideMenuState(state),
-    menuItems: getSideMenuItems(state),
-  }
-}
-
-const mapDispatchToProps = dispatch => ({
-  onClose: dispatch(toggleSideMenu(false)),
+const mapStateToProps = state => ({
+  menuIsOpen: getSideMenuState(state),
+  menuItems: getSideMenuItems(state),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routes)
+const mapDispatchToProps = dispatch => ({
+  onClose: () => dispatch(toggleSideMenu(false)),
+  // onOpen: () => dispatch(toggleSideMenu(true)),
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Routes))
