@@ -40,7 +40,7 @@ const Routes = ({
 
 Routes.propTypes = {
   menuIsOpen: PropTypes.bool,
-  onOpen: PropTypes.func.isRequired,
+  onOpen: PropTypes.func,
   onClose: PropTypes.func.isRequired,
   menuItems: PropTypes.arrayOf(PropTypes.string),
 }
@@ -48,6 +48,7 @@ Routes.propTypes = {
 Routes.defaultProps = {
   menuIsOpen: false,
   menuItems: [],
+  onOpen: null,
 }
 
 const mapStateToProps = state => ({
