@@ -184,6 +184,8 @@ const HomePage = ({ menuClick, signInClick, signUpClick }) => (
 
 HomePage.propTypes = {
   menuClick: PropTypes.func.isRequired,
+  signInClick: PropTypes.func.isRequired,
+  signUpClick: PropTypes.func.isRequired,
 }
 
 HomePage.defaultProps = {
@@ -192,7 +194,8 @@ HomePage.defaultProps = {
 
 const mapDispatchToProps = dispatch => ({
   menuClick: () => dispatch(toggleSideMenu(true)),
-  signInClick: () => dispatch(push('event-stats')),
+  signInClick: () => alert('need to create a signIn thunk'),
+  signUpClick: () => dispatch(push('sign-up')),
 })
 
 export default connect(null, mapDispatchToProps)(HomePage)

@@ -8,6 +8,7 @@ import { toggleSideMenu } from './splitterState'
 import MenuPage from './MenuPage/MenuPage'
 import HomePage from './HomePage/HomePage'
 import EventStatsPage from './EventStatsPage/EventStatsPage'
+import SignUpPage from './SignUpPage/SignUpPage'
 
 
 const Routes = ({
@@ -31,6 +32,7 @@ const Routes = ({
         {/* <Route exact path="/" component={HomePage} /> */}
         <Route exact path="/" component={HomePage} />
         <Route path="/event-stats" component={EventStatsPage} />
+        <Route path="/sign-up" component={SignUpPage} />
       </SplitterContent>
     </Splitter>
 
