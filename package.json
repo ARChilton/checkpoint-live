@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/addon-actions": "^3.3.14",
+    "@storybook/addon-console": "^1.0.0",
+    "@storybook/addon-info": "^3.3.14",
+    "@storybook/addon-knobs": "^3.3.14",
+    "@storybook/addon-links": "^3.3.14",
+    "@storybook/addon-options": "^3.3.14",
+    "@storybook/addon-storyshots": "^3.3.14",
+    "@storybook/addons": "^3.3.14",
+    "@storybook/react": "^3.3.14",
+    "debug": "^3.1.0",
     "emotion": "^9.0.2",
     "history": "^4.7.2",
     "onsenui": "^2.9.2",
@@ -26,9 +36,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",

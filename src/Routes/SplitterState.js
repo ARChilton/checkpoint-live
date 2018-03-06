@@ -6,7 +6,8 @@ export const toggleSideMenu = (sideMenuOpen = false) => ({
 })
 
 export const initialState = {
-  sideMenuOpen: false,
+  sideMenuOpen: true,
+  menuItems: ['signOut'],
 }
 
 const HomePageReducer = (state = initialState, action) => {
@@ -20,5 +21,6 @@ const HomePageReducer = (state = initialState, action) => {
 }
 
 export const getSideMenuState = state => state.sideMenuOpen
+export const getSideMenuItems = state => state.menuItems
 
 export default HomePageReducer
