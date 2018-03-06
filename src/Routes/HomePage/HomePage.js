@@ -1,19 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { push } from 'react-router-redux'
 import { Page, ProgressBar, ToolbarButton, Icon, Input, Button } from 'react-onsenui'
 import Logo from '../../components/Logo/Logo'
 import smallLogo from '../../img/icon.svg'
 import operationFounderLogo from '../../img/operationFounder.png'
-import { toggleSideMenu } from '../SplitterState'
+import { toggleSideMenu } from './../splitterState'
 
 export const onsenuiPageListing = {
   signInPage: 'signInPage',
 }
 
-const HomePage = ({ menuClick }) => (
+const HomePage = ({ menuClick, signInClick, signUpClick }) => (
 
   <Page id="signInPage">
     <Helmet
@@ -60,10 +60,10 @@ const HomePage = ({ menuClick }) => (
             <Input id="signInPassword" modifier="underbar" placeholder="Password" float type="password" className="input70perWidth " />
           </p>
           <p>
-            <Button className="signInButton primaryColorButton input70perWidth">Sign In</Button>
+            <Button className="signInButton primaryColorButton input70perWidth" onClick={signInClick}>Sign In</Button>
           </p>
           <p>
-            <Button className="signUpButton secondaryColorButton maxWidth marginAuto" modifier="large">Event Organiser Sign Up</Button>
+            <Button className="signUpButton secondaryColorButton maxWidth marginAuto" modifier="large" onClick={signUpClick}>Event Organiser Sign Up</Button>
           </p>
         </form>
       </div>
@@ -183,7 +183,7 @@ const HomePage = ({ menuClick }) => (
 )
 
 HomePage.propTypes = {
-
+  menuClick: PropTypes.func.isRequired,
 }
 
 HomePage.defaultProps = {
@@ -192,7 +192,7 @@ HomePage.defaultProps = {
 
 const mapDispatchToProps = dispatch => ({
   menuClick: () => dispatch(toggleSideMenu(true)),
+  signInClick: () => dispatch(push('event-stats')),
 })
-
 
 export default connect(null, mapDispatchToProps)(HomePage)
