@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 // import { reducer as form } from 'redux-form'
-import splitter, { getSideMenuItems as pureGetSideMenuItems, getSideMenuState as pureGetSideMenuState } from './../Routes/SplitterState'
+import splitter, { getSideMenuItems as pureGetSideMenuItems, getSideMenuState as pureGetSideMenuState } from './../Routes/splitterState'
 
 
 export default () => combineReducers({
-  routerReducer,
+  router: routerReducer,
   splitter,
   // form,
 })
