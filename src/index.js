@@ -14,7 +14,6 @@ import configureStore from './redux/store'
 // service worker
 import registerServiceWorker from './registerServiceWorker'
 // general imports
-
 import './css/bootstrap.min.css'
 import './css/style.css'
 
